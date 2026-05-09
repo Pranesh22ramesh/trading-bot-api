@@ -16,14 +16,16 @@ services:
       - key: JWT_SECRET
         generateValue: true # Render will generate a secure key for you
 
-  # 2. The React Frontend
-  - type: static_site
+  # 2. The React Frontend (Deployed as a Web Service)
+  - type: web
     name: school-api-frontend
-    env: static
+    env: node
     plan: free
     buildCommand: cd frontend && npm install && npm run build
-    publishPath: frontend/dist
+    startCommand: cd frontend && node server.js
     envVars:
+      - key: PORT
+        value: 5173
       - key: VITE_API_URL
         fromService:
           name: school-api-backend
