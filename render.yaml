@@ -17,7 +17,7 @@ services:
         generateValue: true # Render will generate a secure key for you
 
   # 2. The React Frontend
-  - type: static
+  - type: static_site
     name: school-api-frontend
     env: static
     plan: free
