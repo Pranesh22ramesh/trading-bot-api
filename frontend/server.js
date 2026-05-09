@@ -20,7 +20,7 @@ console.log(`Serving static files from: ${distPath}`);
 app.use(express.static(distPath));
 
 // Redirect all requests to index.html (for React Router)
-app.get('/*', (req, res) => {
+app.get('*splat', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
