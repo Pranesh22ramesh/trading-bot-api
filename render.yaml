@@ -1,0 +1,31 @@
+services:
+  # 1. The Node.js Backend API
+  - type: web
+    name: school-api-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: USE_MOCK_DB
+        value: "true" # Fallback to mock for demo
+      - key: JWT_SECRET
+        generateValue: true # Render will generate a secure key for you
+
+  # 2. The React Frontend
+  - type: static
+    name: school-api-frontend
+    env: static
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    publishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: school-api-backend
+          type: web
+          property: host
