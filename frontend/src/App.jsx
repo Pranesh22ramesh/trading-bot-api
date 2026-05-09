@@ -46,14 +46,19 @@ function App() {
       <Auth isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} setUser={setUser} />
 
       <main className="max-w-7xl mx-auto px-4 space-y-8 mt-8">
-        {/* Header Section */}
-        <section className="text-center space-y-4 py-8">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter fade-in">
-            Discover Your <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Future School</span>
-          </h1>
-          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto fade-in" style={{ animationDelay: '0.1s' }}>
-            Explore high-quality educational institutions near you with our real-time proximity-based school management platform.
-          </p>
+        {/* Hero Section */}
+        <section className="relative rounded-3xl overflow-hidden glass p-12 text-center space-y-6 fade-in">
+          <div className="absolute inset-0 z-0 opacity-20">
+            <img src="/src/assets/hero.png" alt="Hero" className="w-full h-full object-cover" />
+          </div>
+          <div className="relative z-10 space-y-4">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
+              Discover Your <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Future School</span>
+            </h1>
+            <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto">
+              Explore high-quality educational institutions near you with our real-time proximity-based school management platform.
+            </p>
+          </div>
         </section>
 
         {/* View Switcher & Search */}
