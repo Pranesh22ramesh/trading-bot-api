@@ -5,6 +5,7 @@ import Auth from './components/Auth';
 import AdminDashboard from './components/AdminDashboard';
 import { schoolService } from './services/api';
 import { Search, Map as MapIcon, List as ListIcon, MapPin, Compass } from 'lucide-react';
+import heroImage from './assets/hero.png';
 
 function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
@@ -49,7 +50,7 @@ function App() {
         {/* Hero Section */}
         <section className="relative rounded-3xl overflow-hidden glass p-12 text-center space-y-6 fade-in">
           <div className="absolute inset-0 z-0 opacity-20">
-            <img src="/src/assets/hero.png" alt="Hero" className="w-full h-full object-cover" />
+            <img src={heroImage} alt="Hero" className="w-full h-full object-cover" />
           </div>
           <div className="relative z-10 space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">

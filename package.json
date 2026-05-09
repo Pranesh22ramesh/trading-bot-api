@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "start:frontend": "node frontend/server.js",
+    "build:frontend": "cd frontend && npm install && npm run build",
     "dev": "nodemon server.js",
     "db:init": "node scripts/initDB.js",
     "seed": "node scripts/seed.js"
