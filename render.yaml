@@ -22,7 +22,7 @@ services:
     env: node
     plan: free
     buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && npm start
+    startCommand: npm run start:frontend
     envVars:
       - key: VITE_API_URL
         fromService:
