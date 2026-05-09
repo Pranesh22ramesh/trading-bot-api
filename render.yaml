@@ -21,8 +21,8 @@ services:
     name: school-api-frontend
     env: node
     plan: free
-    buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && node server.js
+    buildCommand: npm install && cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm start
     envVars:
       - key: VITE_API_URL
         fromService:
