@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 5173;
 
 console.log('--- Frontend Server Startup ---');
 console.log(`Working Directory: ${process.cwd()}`);
